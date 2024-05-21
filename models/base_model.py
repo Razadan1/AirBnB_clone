@@ -19,11 +19,11 @@ class BaseModel:
         self.updated_at = datetime.now()
     
     def to_dict(self) -> None:
-        to_json = self.__dict__
-        to_json['__class__'] = self.__class__.__name__
-        to_json['created_at'] = to_json['created_at'].isoformat()
-        to_json['updated_at'] = to_json['updated_at'].isoformat()
-        return to_json
+        obj_json = self.__dict__
+        obj_json['__class__'] = self.__class__.__name__
+        obj_json['created_at'] = obj_json['created_at'].isoformat()
+        obj_json['updated_at'] = obj_json['updated_at'].isoformat()
+        return obj_json
     
 model = BaseModel()
 print(model)
